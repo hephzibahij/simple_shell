@@ -1,8 +1,9 @@
 #include "shell.h"
+
 /**
  * _putchar - function that writes the character to stdout
- * @c: The character to print
- * Return: character to standard output
+ * @c: Print chaacter
+ * Return: void
  */
 int _putchar(char c)
 {
@@ -10,83 +11,82 @@ int _putchar(char c)
 }
 /**
  * _puts - function that prints a string
- * @str: pointer to string
+ * @str: string's pointer
  * Return: void
  */
 void _puts(char *str)
 {
-	int i;
+	int a;
 
-	for (i = 0; str[i] != '\0'; i++)
+	for (a = 0; str[a] != '\0'; a++)
 	{
-		_putchar(str[i]);
+		_putchar(str[a]);
 	}
 	_putchar('\n');
 }
-/**
- * _strncpy - function that copies a string
- * @dest: destination string
- * @src: source string
- * @n: number of charaters to be copied
- * Return: copied strings
- */
-char *_strncpy(char *dest, char *src, int n)
-{
-	int i = 0;
 
-	while (i < n && *(src + i))
-	{
-		*(dest + i) = *(src + i);
-		i++;
-	}
-	while (i < n)
-	{
-		*(dest + i) = '\0';
-		i++;
-	}
-	return (dest);
-}
 /**
  * _strlen - function that counts the length of a string
- * @s: string input
+ * @s: string's input
  * Return: length of string
  */
+
 int _strlen(char *s)
 {
-	int i;
+	int a;
 
-	for (i = 0; s[i] != '\0'; i++)
+	for (a = 0; s[a] != '\0'; a++)
 	{
 		continue;
 	}
-	return (i);
+	return (a);
 }
+
+/**
+ * intlen - function that determine integer's length
+ * @num: integer number
+ * Return: length of integer
+ */
+
+int intlen(int num)
+{
+	int len = 0;
+
+	while (num != 0)
+	{
+		len++;
+		num /= 10;
+	}
+	return (len);
+}
+
 /**
  * _atoi - function to convert string to a integer
- * @s: string input
+ * @s: string's input
  * Return: converted integer
  */
+
 int _atoi(char *s)
 {
-	int i = 0, j = 1, k;
+	int a = 0, b = 1, c;
 	unsigned int l = 0;
 
-	while (s[i] != '\0')
+	while (s[a] != '\0')
 	{
-		if (s[i] == '-')
+		if (s[a] == '-')
 		{
 			return (2);
 		}
-		k = s[i] - '0';
+		c = s[a] - '0';
 
-		if (l > 0 && !(k >= 0 && k <= 9))
+		if (l > 0 && !(c >= 0 && c <= 9))
 			break;
 
-		if (k >= 0 && k <= 9)
-			l = l * 10 + k;
+		if (c >= 0 && c <= 9)
+			l = l * 10 + c;
 
-		i++;
+		a++;
 	}
-	l *= j;
+	l *= b;
 	return (l);
 }

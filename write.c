@@ -16,11 +16,11 @@ void print_number(unsigned int n)
 }
 
 /**
- * print_number_int - Prints integers using _putchar function
+ * print_int_number - Prints integers using _putchar function
  * @n: Integer to be printed
  */
 
-void print_number_int(int n)
+void print_int_number(int n)
 {
 	unsigned int x = n;
 
@@ -36,11 +36,11 @@ void print_number_int(int n)
 }
 
 /**
- * hashtag_handler - function that removes everything after '#'
+ * handle_hashtag - function to removes content after '#'
  * @buff: input buffer
  * Return: nothing
  */
-void hashtag_handler(char *buff)
+void handle_hashtag(char *buff)
 {
 	int a;
 

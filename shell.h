@@ -126,7 +126,7 @@ void *_calloc(unsigned int size);
 /* Write Function */
 
 void print_number(unsigned int n);
-void print_number_int(int n);
-void hashtag_handler(char *buff);
+void print_int_number(int n);
+void handle_hashtag(char *buff);
 
 #endif

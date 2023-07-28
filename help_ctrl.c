@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * help_all - Displays all possible builtin shellby commands
+ * help_all - Function to displays all possible help builtin
  */
 void help_all(void)
 {
@@ -22,7 +22,8 @@ void help_all(void)
 }
 
 /**
- * alias_help - Displays information on the shell by builtin command 'alias'
+ * alias_help - Function to displays information on alias
+ *
  */
 void alias_help(void)
 {
@@ -44,7 +45,8 @@ void alias_help(void)
 }
 
 /**
- * cd_help - Displays information on the shell by builtin command 'cd'
+ * cd_help - Function to displays information on  current directory
+ *
  */
 void cd_help(void)
 {
@@ -64,8 +66,10 @@ void cd_help(void)
 }
 
 /**
- * help_exit - Displays information on the shell by builtin command 'exit'
+ * help_exit - Function to displays information on help exit
+ *
  */
+
 void help_exit(void)
 {
 	char *msg = "exit: exit [STATUS]\n\tExits the shell.\n\n\tThe ";
@@ -80,11 +84,12 @@ void help_exit(void)
 }
 
 /**
- * help_help - Displays information on the shell by builtin command 'help'
+ * help_help - Function that diplay information in genral help
+ *
  */
 void help_help(void)
 {
-	char *msg = "help: help\n\tSee all possible Shellby builtin commands.\n";
+	char *msg = "help: help\n\tSee all possible builtin commands.\n";
 
 	write(STDOUT_FILENO, msg, _strlen(msg));
 	msg = "\n      help [BUILTIN NAME]\n\tSee specific information on each ";

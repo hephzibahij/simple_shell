@@ -1,7 +1,7 @@
 #include "shell.h"
 /**
- * path_cmd -  Search In $PATH for executable command
- * @cmd: Parsed input
+ * path_cmd - Function to search the PATH
+ * @cmd: Command pointer
  * Return: 0 on success or  1 on failure  0
  */
 int path_cmd(char **cmd)
@@ -29,10 +29,10 @@ int path_cmd(char **cmd)
 	return (1);
 }
 /**
- * build - Build command
- * @token: Executable command
- * @value: Directory conatining Command
- * Return: Parsed full path of command or NULL if failed
+ * build - Function that build the commands
+ * @token: command executing pointer's token
+ * @value: Pointer that gives values to command
+ * Return: Command path or NULL if failed
  */
 char *build(char *token, char *value)
 {
@@ -56,9 +56,9 @@ char *build(char *token, char *value)
 	return (cmd);
 }
 /**
- * _getenv - Gets the value of environment variable by name
- * @name: Environment variable name
- * Return: The value of the environment variable or NULL if failed
+ * _getenv - Functions that variable environment
+ * @name: Pointing to the environment variable's name
+ * Return: Environment variable's name or NULL if failed
  */
 char *_getenv(char *name)
 {

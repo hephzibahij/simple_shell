@@ -1,8 +1,8 @@
 #include "shell.h"
 
 /**
- * read_file - Reads commands from the argument File
- * @file: File containing commands
+ * read_file - Function that reads commands
+ * @file: Pointing to the File to read from
  * @argv: Arguments passed
  * Return: -1 or 0
  */
@@ -32,10 +32,10 @@ void read_file(char *file, char **argv)
 }
 
 /**
- * check_file - Parse commands and handle their execution
- * @row: row from file
+ * check_file - Function that check the file
+ * @row: line char pointer
  * @count: Error counter
- * @fp: File descriptor
+ * @fp: Pointing to the file descriptor
  * @argv: Command line arguments
  */
 
@@ -60,10 +60,10 @@ void check_file(char *row, int count, FILE *fp, char **argv)
 }
 
 /**
- * file_exit - Exit status handler for file input
- * @row: row in a file
- * @cmd: Parsed command
- * @fd: File Descriptor
+ * file_exit - Function that exit the status handler
+ * @row: line char pointer
+ * @cmd: command pointer
+ * @fd: Pointing to the file descriptor
  */
 
 void file_exit(char **cmd, char *row, FILE *fd)

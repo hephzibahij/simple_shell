@@ -1,9 +1,9 @@
 #include "shell.h"
 
 /**
- * _strcmp -compares string
- * @s1: string to character
- * @s2: string to character
+ * _strcmp -compare string
+ * @s1: first string
+ * @s2: second string
  *
  * Return: 0
  */
@@ -34,6 +34,30 @@ int _strcmp(char *s1, char *s2)
 }
 
 /**
+ * _strncmp - function that compares n amount of characters of two strings
+ * @s1: first string
+ * @s2: second string
+ * @n: number of characters to compare
+ * Return: 1 if the strings don't match otherwise 0
+ */
+int _strncmp(const char *s1, const char *s2, size_t n)
+{
+	size_t a;
+
+	if (s1 == NULL)
+		return (-1);
+
+	for (a = 0; a < n && s2[a]; a++)
+	{
+		if (s1[a] != s2[a])
+		{
+			return (1);
+		}
+	}
+	return (0);
+}
+
+/**
  * _isalpha - function to check if c is alphabet
  * @c: character to check
  * Return: 1 if true 0 if false
@@ -50,7 +74,7 @@ int _isalpha(int c)
 	}
 }
 /**
- * _itoa - funciton that convert integer to character
+ * _itoa - function to convert int to chr
  * @n: integer to convert
  * Return: character pointer
  */
@@ -83,7 +107,7 @@ char *_itoa(unsigned int n)
 	return (s);
 }
 /**
- * array_rev - function reverse an array
+ * array_rev - function to reverse an array
  * @arr: array to reverse
  * @len: length of array
  */
@@ -98,20 +122,4 @@ void array_rev(char *arr, int len)
 		arr[a] = arr[(len - 1) - a];
 		arr[(len - 1) - a] = tmp;
 	}
-}
-/**
- * intlen - function that determine length of integer
- * @num: given integer
- * Return: length of integer
- */
-int intlen(int num)
-{
-	int len = 0;
-
-	while (num != 0)
-	{
-		len++;
-		num /= 10;
-	}
-	return (len);
 }

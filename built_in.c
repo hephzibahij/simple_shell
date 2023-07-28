@@ -1,7 +1,7 @@
 #include "shell.h"
 /**
- * change_dirc - Changes directory
- * @cmd: Parsed command
+ * change_dirc - Function that changes directory
+ * @cmd: command pointer
  * @st: Status of last command executed
  * Return: 0 on success 1 if failed (For OLDPWD Always 0 incase of no OLDPWD)
  */
@@ -33,8 +33,8 @@ int change_dirc(char **cmd, __attribute__((unused))int st)
 	return (0);
 }
 /**
- * env_dis - Display enviroment variable
- * @cmd: parsed command
+ * env_dis - Function to display enviroment variable
+ * @cmd: command pointer
  * @st: status of last command executed
  * Return: Always 0
  */
@@ -52,9 +52,9 @@ int env_dis(__attribute__((unused)) char **cmd, __attribute__((unused)) int st)
 	return (0);
 }
 /**
- * built_exec - execute echo cases
- * @st: statue of last command executed
- * @cmd: parsed command
+ * built_exec - Functions that execute echo cases
+ * @st: pointer status
+ * @cmd: command pointer
  * Return: Always 1 Or execute normal echo
  */
 int built_exec(char **cmd, int st)
@@ -64,7 +64,7 @@ int built_exec(char **cmd, int st)
 
 	if (_strncmp(cmd[1], "$?", 2) == 0)
 	{
-		print_number_int(st);
+		print_int_number(st);
 		PRINT("\n");
 	}
 	else if (_strncmp(cmd[1], "$$", 2) == 0)
@@ -85,9 +85,9 @@ int built_exec(char **cmd, int st)
 	return (1);
 }
 /**
- * dis_history - display history of user input on simple_shell
+ * dis_history - Function to display history of command
  * @c: parsed command
- * @st: status of last command executed
+ * @st: pointer to the status of last command executed
  * Return: 0 success or -1 if fail
  */
 int dis_history(__attribute__((unused))char **c, __attribute__((unused))int st)

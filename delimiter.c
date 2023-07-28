@@ -1,61 +1,61 @@
 #include "shell.h"
 /**
- * check_delim - function that checks if a character matchs any character
+ * check_delim - function that checks for matching character
  * @c: character to check
- * @str: string of delimiters
+ * @str: strings arrays
  * Return: 1 on success, 0 on failure
  */
 unsigned int check_delim(char c, const char *str)
 {
-	unsigned int i;
+	unsigned int a;
 
-	for (i = 0; str[i] != '\0'; i++)
+	for (a = 0; str[a] != '\0'; a++)
 	{
-		if (c == str[i])
+		if (c == str[a])
 			return (1);
 	}
 	return (0);
 }
 /**
  * _strtok - function that extracts tokens of a string
- * @str: string
- * @delim: delimiter
+ * @str: strings arrays
+ * @delim: delimiter pointer
  * Return: pointer to the next token or NULL
  */
 char *_strtok(char *str, const char *delim)
 {
 	static char *tokens;
 	static char *new_token;
-	unsigned int i;
+	unsigned int a;
 
 	if (str != NULL)
 		new_token = str;
 	tokens = new_token;
 	if (tokens == NULL)
 		return (NULL);
-	for (i = 0; tokens[i] != '\0'; i++)
+	for (a = 0; tokens[a] != '\0'; a++)
 	{
-		if (check_delim(tokens[i], delim) == 0)
+		if (check_delim(tokens[a], delim) == 0)
 			break;
 	}
-	if (new_token[i] == '\0' || new_token[i] == '#')
+	if (new_token[a] == '\0' || new_token[a] == '#')
 	{
 		new_token = NULL;
 		return (NULL);
 	}
-	tokens = new_token + i;
+	tokens = new_token + a;
 	new_token = tokens;
-	for (i = 0; new_token[i] != '\0'; i++)
+	for (a = 0; new_token[a] != '\0'; a++)
 	{
-		if (check_delim(new_token[i], delim) == 1)
+		if (check_delim(new_token[a], delim) == 1)
 			break;
 	}
-	if (new_token[i] == '\0')
+	if (new_token[a] == '\0')
 		new_token = NULL;
 	else
 	{
-		new_token[i] = '\0';
-		new_token = new_token + i + 1;
+		new_token[a] = '\0';
+		new_token = new_token + a + 1;
 		if (*new_token == '\0')
 			new_token = NULL;
 	}
@@ -101,13 +101,13 @@ char *_getline()
 	buffer[a] = '\0';
 	buf = space(buffer);
 	free(buffer);
-	hashtag_handler(buf);
+	handle_hashtag(buf);
 	return (buf);
 }
 /**
- * enter - Handles newline character input
+ * enter - Functions that handles newline character
  * @string: String to be handled
- * Return: Empty string
+ * Return: void
  */
 char *enter(char *string)
 {
@@ -116,8 +116,8 @@ char *enter(char *string)
 }
 
 /**
- * space - Modifies the input string to remove preceeding whitespaces
- * @str: Input to be modifies
+ * space - Function that check the string input lines
+ * @str: string array
  * Return: Returns the modified string
  */
 char *space(char *str)

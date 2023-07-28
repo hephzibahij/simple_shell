@@ -1,9 +1,9 @@
 #include "shell.h"
 /**
- * _realloc -  reallocates a memory block using malloc and free
+ * _realloc - function to reallocates memory block
  *@ptr: pointer
- *@old_size: previous Size Of The Pointer
- *@new_size: new size of the pointer
+ *@old_size: Pointing to the previous size
+ *@new_size: Pointing to the new size
  *Return: Pointer to reallocated memory
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
@@ -36,9 +36,9 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	return (result);
 }
 /**
- * free_all - free memory allocated
- * @cmd: array pointer
- * @row: char pointer
+ * free_all - Function to free all memory allocated
+ * @cmd: command pointer
+ * @row: line char pointer
  * Return: Void
  */
 void free_all(char **cmd, char *row)
@@ -49,7 +49,7 @@ void free_all(char **cmd, char *row)
 	row = NULL;
 }
 /**
- * _memcpy - copy bytes of memory from source to destination
+ * _memcpy - Function to copy memory bytes from src to dest
  *@dest: destination pointer
  *@src: source pointer
  *@n: size to be copied

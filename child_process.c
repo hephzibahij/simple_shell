@@ -87,9 +87,9 @@ char **parse_cmd(char *input)
 }
 
 /**
- * print_echo - Executes built-in echo function
- * @cmd: Parsed Command
- * Return: 0 Upon Success -1 Upon Failure
+ * print_echo - Function that execute the builtin echo
+ * @cmd: Command pointer
+ * Return: 0 or -1
  */
 
 
@@ -120,7 +120,7 @@ int print_echo(char **cmd)
 	return (1);
 }
 /**
- * history - a function that write file with user inputs
+ * history - a function that compiled file with user inputs
  * @input: user input
  * Return: 0 on success -1 if failed
  */
@@ -148,9 +148,9 @@ int history(char *input)
 }
 
 /**
- * separator - Separates command recieved from stdin by ;
- * @input: String gathered from stdin
- * Return: Parsed strings to be used as commands
+ * separator - Function that separates command recieved
+ * @input: user input
+ * Return: Parsed strings commands
  */
 
 char **separator(char *input)
@@ -159,7 +159,7 @@ char **separator(char *input)
 
 	char **commands;
 	char *command;
-	int i;
+	int a;
 	int buffsize = BUFSIZE;
 
 	if (input[0] == ' ' && input[_strlen(input)] == ' ')
@@ -174,12 +174,12 @@ char **separator(char *input)
 		return (NULL);
 	}
 	command = _strtok(input, ";&");
-	for (i = 0; command; i++)
+	for (a = 0; command; a++)
 	{
-		commands[i] = command;
+		commands[a] = command;
 		command = _strtok(NULL, ";&");
 	}
-	commands[i] = NULL;
+	commands[a] = NULL;
 
 	return (commands);
 }

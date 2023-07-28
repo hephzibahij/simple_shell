@@ -1,8 +1,8 @@
 #include "shell.h"
 
 /**
- * check_builtin - Checks if parsed command in built-in
- * @cmd: Parsed command to be check
+ * check_builtin - Function that checks the command in built-in
+ * @cmd: command pointer
  * Return: 0 Succes -1 Fail
  */
 
@@ -32,9 +32,9 @@ int check_builtin(char **cmd)
 }
 
 /**
- * builtin_proc - Handles predefined built in commands
- * @cmd: Array of parsed command strings
- * @st: Status of last execution
+ * builtin_proc - Functions that process builtin commands
+ * @cmd: command pointer
+ * @st: Pointer to the status of last execution
  * Return: -1 Failure 0 Success
  */
 
@@ -62,11 +62,11 @@ int builtin_proc(char **cmd, int st)
 }
 
 /**
- * builtin_exit - Exit Status for built-in commands
- * @cmd: Array of parsed command strings
- * @input: Input recieved from user (to be freed)
- * @argv: Arguments before program starts(argv[0] == Shell Program Name)
- * @c: Shell execution count
+ * builtin_exit - Function that exit status for built-in commands
+ * @cmd: command pointer
+ * @input: pointing to the input recieved from user
+ * @argv: Arguments vector
+ * @c: Array to shell execution count
  * @stat: Exit status
  */
 
@@ -107,9 +107,9 @@ void builtin_exit(char **cmd, char *input, char **argv, int c, int stat)
 }
 
 /**
- * dis_help - display help for builtin commands
- * @cmd: parsed command
- * @st: Status of last command executed
+ * dis_help - Function to display help for builtin commands
+ * @cmd: command pointer
+ * @st: Pointer to the status of last command executed
  * Return: 0 Success
  */
 int dis_help(char **cmd, __attribute__((unused))int st)
