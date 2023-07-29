@@ -42,10 +42,10 @@ int builtin_proc(char **cmd, int st)
 {
 	builtin built_in[] = {
 		{"cd", change_dirc},
-		{"env", env_dis},
+		{"env", ev_dis},
 		{"help", dis_help},
 		{"exec", built_exec},
-		{"history", dis_history},
+		{"history", dis_histry},
 		{NULL, NULL}
 	};
 	int a = 0;

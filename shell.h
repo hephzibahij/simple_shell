@@ -1,13 +1,13 @@
 #ifndef SHELL_H
 #define SHELL_H
 
-/***** MACROS *****/
+/** MACROS */
 
 #define PRINT(c) (write(STDERR_FILENO, c, _strlen(c)))
 #define BUFSIZE 10240
 #define DELIMITER " \t\r\n\a"
 
-/*** STANDARD LIBRARIES ***/
+/** STANDARD LIBRARIES */
 
 #include <stdio.h>
 #include <unistd.h>
@@ -21,18 +21,17 @@
 #include <errno.h>
 #include <linux/limits.h>
 
-/** Builtin Struct*/
+/** Builting Structure*/
 
 /**
- * builtin_struct - function that give a struct to builtin commands
+ * builtin_struct - Builtin structure function
  * @command: - Built-in command
- * @function: - Pointer to custom functions that have
- * similar functionalities as the built-in commands
+ * @function: - Pointer to similar functions in the builtin commands
  */
 typedef struct _builtin
 {
-        char *command;
-        int (*function)(char **row, int st);
+	char *command;
+	int (*function)(char **row, int st);
 } builtin;
 
 /** Builtin Functions*/
@@ -40,9 +39,9 @@ int check_builtin(char **cmd);
 int builtin_proc(char **cmd, int st);
 void builtin_exit(char **cmd, char *input, char **argv, int c, int stat);
 int change_dirc(char **cmd, __attribute__((unused))int st);
-int env_dis(__attribute__((unused)) char **cmd, __attribute__((unused)) int st);
+int ev_dis(__attribute__((unused)) char **cmd, __attribute__((unused)) int st);
 int built_exec(char **cmd, int st);
-int dis_history(__attribute__((unused))char **c, __attribute__((unused))int st);
+int dis_histry(__attribute__((unused))char **c, __attribute__((unused))int st);
 int dis_help(char **cmd, __attribute__((unused))int st);
 
 /** Delimiter Functions */
@@ -68,7 +67,7 @@ void check_file(char *row, int count, FILE *fp, char **argv);
 void file_exit(char **cmd, char *row, FILE *fd);
 
 /* String Functions */
-int _strcmp( char *s1, char *s2);
+int _strcmp(char *s1, char *s2);
 int _isalpha(int c);
 int _isalpha(int c);
 char *_itoa(unsigned int n);

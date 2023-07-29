@@ -38,7 +38,7 @@ int change_dirc(char **cmd, __attribute__((unused))int st)
  * @st: status of last command executed
  * Return: Always 0
  */
-int env_dis(__attribute__((unused)) char **cmd, __attribute__((unused)) int st)
+int ev_dis(__attribute__((unused)) char **cmd, __attribute__((unused)) int st)
 {
 	size_t a;
 	int len;
@@ -90,7 +90,7 @@ int built_exec(char **cmd, int st)
  * @st: pointer to the status of last command executed
  * Return: 0 success or -1 if fail
  */
-int dis_history(__attribute__((unused))char **c, __attribute__((unused))int st)
+int dis_histry(__attribute__((unused))char **c, __attribute__((unused))int st)
 {
 	char *filename = ".simple_shell_history";
 	FILE *fp;
