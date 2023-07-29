@@ -1,4 +1,5 @@
-simple_shell
+### **Simple Shell**
+
 Task done by Ijeje Hephzibah Ada and Khadijat Rasaq
 ============================================================================================
 0. Betty would be proud
