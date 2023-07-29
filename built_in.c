@@ -33,7 +33,7 @@ int change_dirc(char **cmd, __attribute__((unused))int st)
 	return (0);
 }
 /**
- * env_dis - Function to display enviroment variable
+ * ev_dis - Function to display enviroment variable
  * @cmd: command pointer
  * @st: status of last command executed
  * Return: Always 0
@@ -85,7 +85,7 @@ int built_exec(char **cmd, int st)
 	return (1);
 }
 /**
- * dis_history - Function to display history of command
+ * dis_histry - Function to display history of command
  * @c: parsed command
  * @st: pointer to the status of last command executed
  * Return: 0 success or -1 if fail
